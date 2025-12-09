@@ -1,0 +1,71 @@
+:root {
+  --primary-color: #4c6ef5;
+  --secondary-color: #f5eded;
+  --accent-color: #ffb84c;
+  --text-color: #333;
+  --bg-color: #f6f5f5;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: var(--text-color);
+}
+
+h2 {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+app-bar {
+  display: block;
+  font-weight: 600;
+  padding: 18px;
+  color: white;
+}
+
+app-bar[theme="blue"] {
+  background-color: var(--primary-color);
+}
+app-bar[theme="orange"] {
+  background-color: var(--accent-color);
+}
+app-bar[theme="gray"] {
+  background-color: #555;
+}
+
+note-form {
+  display: block;
+  margin: 20px auto;
+  max-width: 420px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+note-form:hover {
+  transform: scale(1.01);
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  justify-items: center;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  note-form {
+    width: 90%;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
